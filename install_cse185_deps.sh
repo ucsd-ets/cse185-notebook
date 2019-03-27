@@ -36,3 +36,13 @@ git clone https://github.com/sequencing/NxTrim
 cd NxTrim
 make
 cp nxtrim /usr/local/bin/nxtrim
+
+# Install jellyfish
+cd /sources
+wget https://github.com/gmarcais/Jellyfish/releases/download/v2.2.10/jellyfish-2.2.10.tar.gz
+tar -xzvf jellyfish-2.2.10
+cd jellyfish-2.2.10
+./configure
+make
+make install
+ldconfig
