@@ -29,3 +29,10 @@ git clone https://github.com/najoshi/sickle
 cd sickle
 make
 cp sickle /usr/local/bin/sickle
+
+# Install nxtrim
+cd /sources
+git clone https://github.com/sequencing/NxTrim
+cd NxTrim
+make
+cp nxtrim /usr/local/bin/nxtrim
