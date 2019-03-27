@@ -9,6 +9,7 @@ RUN apt-get update && apt-get -qq install -y \
     git \
     libbz2-dev \
     liblzma-dev \
+    r-base \
     zlib1g-dev
 
 # Make sources directory

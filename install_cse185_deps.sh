@@ -46,3 +46,11 @@ cd jellyfish-2.2.10
 make
 make install
 ldconfig
+
+# Install kmer genie
+cd /sources
+wget http://kmergenie.bx.psu.edu/kmergenie-1.7051.tar.gz
+tar -xzvf kmergenie-1.7051.tar.gz
+cd kmergenie-1.7051
+python3 setup.py install
+
