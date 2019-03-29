@@ -6,6 +6,7 @@ USER root
 # Install dependencies
 RUN apt-get update && apt-get -qq install -y \
     cmake \
+    datamash \
     default-jdk \
     git \
     libbz2-dev \
