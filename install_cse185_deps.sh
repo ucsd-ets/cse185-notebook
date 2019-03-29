@@ -60,3 +60,10 @@ git clone --recursive https://github.com/GATB/minia.git
 cd minia
 sh INSTALL
 cp ./build/bin/minia /usr/local/bin/minia
+
+# Install Spades
+cd /sources
+wget http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0.tar.gz
+tar -xzvf SPAdes-3.13.0.tar.gz
+cd SPAdes-3.13.0
+PREFIX=/usr/local ./spades_compile.sh
