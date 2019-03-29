@@ -54,3 +54,7 @@ tar -xzvf kmergenie-1.7051.tar.gz
 cd kmergenie-1.7051
 python3 setup.py install
 
+# Install minia
+git clone --recursive https://github.com/GATB/minia.git
+cd minia
+sh INSTALL
