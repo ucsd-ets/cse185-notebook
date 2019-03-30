@@ -67,3 +67,11 @@ wget http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0.tar.gz
 tar -xzvf SPAdes-3.13.0.tar.gz
 cd SPAdes-3.13.0
 PREFIX=/usr/local ./spades_compile.sh
+
+# Install bfc kmer error correction
+cd /sources
+git clone https://github.com/lh3/bfc
+cd bfc
+make
+cp bfc /usr/local/bin/bfc
+
