@@ -75,3 +75,8 @@ cd bfc
 make
 cp bfc /usr/local/bin/bfc
 
+# Install SSPACE
+cd /sources
+git clone https://github.com/nsoranzo/sspace_basic
+cd sspace_basic
+cp SSPACE_Basic_v2.0.pl /usr/local/bin/SSPACE_Basic_v2.0.pl
