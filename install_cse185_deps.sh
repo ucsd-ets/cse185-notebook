@@ -40,7 +40,7 @@ cp nxtrim /usr/local/bin/nxtrim
 # Install jellyfish
 cd /sources
 wget https://github.com/gmarcais/Jellyfish/releases/download/v2.2.10/jellyfish-2.2.10.tar.gz
-tar -xzvf jellyfish-2.2.10
+tar -xzvf jellyfish-2.2.10.tar.gz
 cd jellyfish-2.2.10
 ./configure
 make
@@ -77,6 +77,13 @@ cp bfc /usr/local/bin/bfc
 
 # Install SSPACE
 cd /sources
+wget https://github.com/BenLangmead/bowtie/releases/download/v1.2.2_p1/bowtie-1.2.2-linux-x86_64.zip
+unzip bowtie-1.2.2-linux-x86_64.zip
+cd bowtie-1.2.2-linux-x86_64
+cp bowtie* /usr/local/bin/
+cd /sources
 git clone https://github.com/nsoranzo/sspace_basic
 cd sspace_basic
 cp SSPACE_Basic_v2.0.pl /usr/local/bin/SSPACE_Basic_v2.0.pl
+export PERL5LIB=$PERL5LIB:/sources/sspace_basic/dotlib # TODO do we need to set ENV in dockerfile?
+cp -r /sources/sspace_basic/bin /usr/local/bin/
