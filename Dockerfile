@@ -9,9 +9,11 @@ RUN apt-get update && apt-get -qq install -y \
     datamash \
     default-jdk \
     git \
+    less \
     libbz2-dev \
     liblzma-dev \
     r-base \
+    vim \
     zlib1g-dev
 
 # Make sources directory
@@ -36,5 +38,5 @@ RUN jupyter nbextension disable --sys-prefix formgrader/main --section=tree
 RUN jupyter serverextension disable --sys-prefix nbgrader.server_extensions.formgrader
 RUN jupyter nbextension disable --sys-prefix create_assignment/main
 
-# Set working directory
-WORKDIR /home/jovyan
+# Set env variables
+ENV PERL5LIB="${PERL5LIB}:/sources/sspace_basic/dotlib"
