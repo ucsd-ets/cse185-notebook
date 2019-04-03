@@ -85,5 +85,10 @@ cd /sources
 git clone https://github.com/nsoranzo/sspace_basic
 cd sspace_basic
 cp SSPACE_Basic_v2.0.pl /usr/local/bin/SSPACE_Basic_v2.0.pl
-export PERL5LIB=$PERL5LIB:/sources/sspace_basic/dotlib # TODO do we need to set ENV in dockerfile?
 cp -r /sources/sspace_basic/bin /usr/local/bin/
+
+# Install Plink
+cd /sources
+wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190304.zip
+unzip plink_linux_x86_64_20190304.zip
+cp plink /usr/local/bin
