@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 ##### Week 1 ######
 # Install samtools (needed to index reference fasta files)
 cd /sources
@@ -92,3 +94,11 @@ cd /sources
 wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190304.zip
 unzip plink_linux_x86_64_20190304.zip
 cp plink /usr/local/bin
+
+# Install bedtools
+cd /sources
+wget https://github.com/arq5x/bedtools2/releases/download/v2.28.0/bedtools-2.28.0.tar.gz
+tar -zxvf bedtools-2.28.0.tar.gz
+cd bedtools2
+make
+make install

@@ -22,11 +22,6 @@ RUN mkdir /sources
 # Install extra python packages
 RUN pip install pyvcf
 
-# Install course-specific software
-ADD install_cse185_deps.sh /sources/
-RUN chmod +x /sources/install_cse185_deps.sh
-RUN /sources/install_cse185_deps.sh
-
 # Install nbgrader
 RUN conda install nbgrader
 RUN jupyter nbextension install --symlink --sys-prefix --py nbgrader
@@ -37,6 +32,11 @@ RUN jupyter serverextension enable --sys-prefix --py nbgrader
 RUN jupyter nbextension disable --sys-prefix formgrader/main --section=tree
 RUN jupyter serverextension disable --sys-prefix nbgrader.server_extensions.formgrader
 RUN jupyter nbextension disable --sys-prefix create_assignment/main
+
+# Install course-specific software
+ADD install_cse185_deps.sh /sources/
+RUN chmod +x /sources/install_cse185_deps.sh
+RUN /sources/install_cse185_deps.sh
 
 # Set env variables
 ENV PERL5LIB="${PERL5LIB}:/sources/sspace_basic/dotlib"
