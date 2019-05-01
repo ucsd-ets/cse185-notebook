@@ -8,7 +8,7 @@ cd /sources
 wget -O samtools-1.9.tar.bz2 https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2
 tar -xjf samtools-1.9.tar.bz2
 cd samtools-1.9 
-./configure --without-curses && make && make install
+./configure && make && make install
 
 # Install BWA mem
 cd /sources

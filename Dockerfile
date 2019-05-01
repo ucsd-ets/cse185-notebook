@@ -12,6 +12,7 @@ RUN apt-get update && apt-get -qq install -y \
     less \
     libbz2-dev \
     liblzma-dev \
+    libncurses5 libncurses5-dev \
     r-base \
     vim \
     zlib1g-dev
@@ -34,9 +35,18 @@ RUN jupyter serverextension disable --sys-prefix nbgrader.server_extensions.form
 RUN jupyter nbextension disable --sys-prefix create_assignment/main
 
 # Install course-specific software
-ADD install_cse185_deps.sh /sources/
-RUN chmod +x /sources/install_cse185_deps.sh
-RUN /sources/install_cse185_deps.sh
+ADD install_cse185_deps_wks1-3.sh /sources/
+RUN chmod +x /sources/install_cse185_deps_wks1-3.sh
+RUN /sources/install_cse185_deps_wks1-3.sh
+
+ADD install_cse185_deps_wk4.sh /sources/
+RUN chmod +x /sources/install_cse185_deps_wk4.sh
+RUN /sources/install_cse185_deps_wk4.sh
+
+ADD install_cse185_deps_wk5.sh /sources
+RUN chmod +x /sources/install_cse185_deps_wk5.sh
+RUN /sources/install_cse185_deps_wk5.sh
 
 # Set env variables
 ENV PERL5LIB="${PERL5LIB}:/sources/sspace_basic/dotlib"
+ENV PATH="${PATH}:/sources/homer/bin:/sources/meme-5.0.5/src/"
