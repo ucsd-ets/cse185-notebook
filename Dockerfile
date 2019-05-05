@@ -47,6 +47,9 @@ ADD install_cse185_deps_wk5.sh /sources
 RUN chmod +x /sources/install_cse185_deps_wk5.sh
 RUN /sources/install_cse185_deps_wk5.sh
 
+RUN rm /sources/*.tar.gz
+RUN rm /sources/*.zip
+RUN rm -rf /opt/julia
 ADD install_cse185_deps_wk6.sh /sources
 RUN chmod +x /sources/install_cse185_deps_wk6.sh
 RUN /sources/install_cse185_deps_wk6.sh
