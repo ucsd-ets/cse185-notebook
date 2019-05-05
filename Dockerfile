@@ -47,6 +47,10 @@ ADD install_cse185_deps_wk5.sh /sources
 RUN chmod +x /sources/install_cse185_deps_wk5.sh
 RUN /sources/install_cse185_deps_wk5.sh
 
+ADD install_cse185_deps_wk6.sh /sources
+RUN chmod +x /sources/install_cse185_deps_wk6.sh
+RUN /sources/install_cse185_deps_wk6.sh
+
 # Set env variables
 ENV PERL5LIB="${PERL5LIB}:/sources/sspace_basic/dotlib"
 ENV PATH="${PATH}:/sources/homer/bin:/sources/meme-5.0.5/src/"
