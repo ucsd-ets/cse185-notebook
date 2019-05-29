@@ -57,3 +57,10 @@ RUN /sources/install_cse185_deps_wk6.sh
 # Set env variables
 ENV PERL5LIB="${PERL5LIB}:/sources/sspace_basic/dotlib"
 ENV PATH="${PATH}:/sources/homer/bin:/sources/meme-5.0.5/src/"
+
+# Software requested for projects
+RUN apt-get update && apt-get install -y binutils libproj-dev gdal-bin
+RUN mkdir -p /opt/geopandas/build/
+COPY requirements.txt /opt/geopandas/build/requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r /opt/geopandas/build/requirements.txt
