@@ -13,9 +13,16 @@ RUN apt-get update && apt-get -qq install -y \
     libbz2-dev \
     liblzma-dev \
     libncurses5 libncurses5-dev \
-    r-base \
     vim \
-    zlib1g-dev
+    zlib1g-dev \
+    software-properties-common
+
+# uninstall R from conda and install manually
+RUN conda remove r-base -y
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
+RUN apt-get update
+RUN apt-get install r-base-dev -y
 
 # Make sources directory
 RUN mkdir /sources
