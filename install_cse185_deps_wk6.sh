@@ -3,6 +3,6 @@
 set -e
 
 ##### Week 6 ######
-#apt-get install -y openssh-client
+apt-get install -y openssh-client
 
-#pip install scanpy
+pip install scanpy

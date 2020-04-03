@@ -36,35 +36,22 @@ ADD install_cse185_deps_wks1-3.sh /sources/
 RUN chmod +x /sources/install_cse185_deps_wks1-3.sh
 RUN /sources/install_cse185_deps_wks1-3.sh
 
-#ADD install_cse185_deps_wk4.sh /sources/
-#RUN chmod +x /sources/install_cse185_deps_wk4.sh
-#RUN /sources/install_cse185_deps_wk4.sh
-
-#ADD install_cse185_deps_wk5.sh /sources
-#RUN chmod +x /sources/install_cse185_deps_wk5.sh
-#RUN /sources/install_cse185_deps_wk5.sh
+ADD install_cse185_deps_wk4.sh /sources/
+RUN chmod +x /sources/install_cse185_deps_wk4.sh
+RUN /sources/install_cse185_deps_wk4.sh
 
 RUN rm /sources/*.tar.gz
 RUN rm /sources/*.zip
 RUN rm -rf /opt/julia
+
+ADD install_cse185_deps_wk5.sh /sources
+RUN chmod +x /sources/install_cse185_deps_wk5.sh
+RUN /sources/install_cse185_deps_wk5.sh
+
 #ADD install_cse185_deps_wk6.sh /sources
 #RUN chmod +x /sources/install_cse185_deps_wk6.sh
 #RUN /sources/install_cse185_deps_wk6.sh
 
-# DESeq2
-RUN R -e "install.packages('readr', dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "BiocManager::install('DESeq2', version = '3.10')"
-RUN R -e "BiocManager::install('tximport', version = '3.10')"
-RUN pip install simplegeneric
-
 # Set env variables
 ENV PERL5LIB="${PERL5LIB}:/sources/sspace_basic/dotlib"
 ENV PATH="${PATH}:/sources/homer/bin:/sources/meme-5.0.5/src/"
-
-# Software requested for projects
-#RUN apt-get update && apt-get install -y binutils libproj-dev gdal-bin
-#RUN mkdir -p /opt/geopandas/build/
-#COPY requirements.txt /opt/geopandas/build/requirements.txt
-#RUN pip install --upgrade pip
-#RUN pip install -r /opt/geopandas/build/requirements.txt
