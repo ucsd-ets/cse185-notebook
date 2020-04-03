@@ -5,6 +5,7 @@ USER root
 
 # Install dependencies
 RUN apt-get update && apt-get -qq install -y \
+    automake \
     cmake \
     datamash \
     default-jdk \
@@ -49,6 +50,13 @@ RUN rm -rf /opt/julia
 #ADD install_cse185_deps_wk6.sh /sources
 #RUN chmod +x /sources/install_cse185_deps_wk6.sh
 #RUN /sources/install_cse185_deps_wk6.sh
+
+# DESeq2
+RUN R -e "install.packages('readr', dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "BiocManager::install('DESeq2', version = '3.10')"
+RUN R -e "BiocManager::install('tximport', version = '3.10')"
+RUN pip install simplegeneric
 
 # Set env variables
 ENV PERL5LIB="${PERL5LIB}:/sources/sspace_basic/dotlib"
