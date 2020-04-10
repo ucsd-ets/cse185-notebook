@@ -61,3 +61,6 @@ RUN R -e "install.packages('readr', dependencies=TRUE, repos='http://cran.rstudi
 RUN R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "BiocManager::install('DESeq2', version = '3.10')"
 RUN R -e "BiocManager::install('tximport', version = '3.10')"
+
+# For lab 6
+RUN apt-get -qq install -y bison libtool flex
