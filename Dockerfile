@@ -19,11 +19,11 @@ RUN apt-get update && apt-get -qq install -y \
     software-properties-common
 
 # uninstall R from conda and install manually
-RUN conda remove r-base -y
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
-RUN apt-get update
-RUN apt-get install r-base-dev -y
+# RUN conda remove r-base -y
+# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+# RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
+# RUN apt-get update
+# RUN apt-get install r-base-dev -y
 
 # Make sources directory
 RUN mkdir /sources
@@ -32,21 +32,21 @@ RUN mkdir /sources
 RUN pip install pyvcf
 
 # Install course-specific software
-ADD install_cse185_deps_wks1-3.sh /sources/
-RUN chmod +x /sources/install_cse185_deps_wks1-3.sh
-RUN /sources/install_cse185_deps_wks1-3.sh
+# ADD install_cse185_deps_wks1-3.sh /sources/
+# RUN chmod +x /sources/install_cse185_deps_wks1-3.sh
+# RUN /sources/install_cse185_deps_wks1-3.sh
 
-ADD install_cse185_deps_wk4.sh /sources/
-RUN chmod +x /sources/install_cse185_deps_wk4.sh
-RUN /sources/install_cse185_deps_wk4.sh
+# ADD install_cse185_deps_wk4.sh /sources/
+# RUN chmod +x /sources/install_cse185_deps_wk4.sh
+# RUN /sources/install_cse185_deps_wk4.sh
 
-RUN rm /sources/*.tar.gz
-RUN rm /sources/*.zip
-RUN rm -rf /opt/julia
+# RUN rm /sources/*.tar.gz
+# RUN rm /sources/*.zip
+# RUN rm -rf /opt/julia
 
-ADD install_cse185_deps_wk5.sh /sources
-RUN chmod +x /sources/install_cse185_deps_wk5.sh
-RUN /sources/install_cse185_deps_wk5.sh
+# ADD install_cse185_deps_wk5.sh /sources
+# RUN chmod +x /sources/install_cse185_deps_wk5.sh
+# RUN /sources/install_cse185_deps_wk5.sh
 
 #ADD install_cse185_deps_wk6.sh /sources
 #RUN chmod +x /sources/install_cse185_deps_wk6.sh
@@ -59,5 +59,5 @@ ENV PATH="${PATH}:/sources/homer/bin:/sources/meme-5.0.5/src/"
 # DESeq2
 RUN R -e "install.packages('readr', dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "BiocManager::install('DESeq2', version = '3.10')"
-RUN R -e "BiocManager::install('tximport', version = '3.10')"
+RUN R -e "BiocManager::install('DESeq2')"
+RUN R -e "BiocManager::install('tximport')"
