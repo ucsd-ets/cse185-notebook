@@ -1,10 +1,10 @@
-FROM ucsdets/datascience-notebook:2019.4-stable
+FROM ucsdets/datascience-notebook:2020.2-stable
 
 MAINTAINER Melissa Gymrek <mgymrek@ucsd.edu>
 USER root
 
 # Install dependencies
-RUN apt-get update && apt-get -qq install -y \
+RUN apt-get clean && apt-get update && apt-get install -y \
     automake \
     cmake \
     datamash \
