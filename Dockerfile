@@ -71,4 +71,8 @@ RUN R -e "install.packages('remotes')"
 RUN R -e "remotes::install_github('linxihui/NNLM')"
 RUN apt-get -qq install -y libssl-dev
 RUN R -e "remotes::install_github('yanwu2014/swne')"
-RUN R -e "install.packages('seurat')"
+RUN apt-get -qq install -y libcurl4-openssl-dev
+
+RUN R -e "remotes::install_version('rsvd', version = '1.0.2')"
+RUN R -e "remotes::install_version('spatstat', version = '1.64-1')"
+RUN R -e "remotes::install_version('Seurat', version = '3.2.3', upgrade='never')"
