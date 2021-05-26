@@ -1,4 +1,4 @@
-FROM ucsdets/datascience-notebook:2019.4-stable
+FROM ucsdets/datascience-notebook:2021.1-stable
 
 MAINTAINER Melissa Gymrek <mgymrek@ucsd.edu>
 USER root
@@ -64,3 +64,10 @@ RUN R -e "BiocManager::install('tximport', version = '3.10')"
 
 # For lab 6
 RUN apt-get -qq install -y bison libtool flex
+
+# For projects
+RUN apt-get -qq install -y libopenblas-dev
+RUN R -e "install.packages('remotes')"
+RUN R -e "remotes::install_github('linxihui/NNLM')"
+RUN apt-get -qq install -y libssl-dev
+RUN R -e "remotes::install_github('yanwu2014/swne')"

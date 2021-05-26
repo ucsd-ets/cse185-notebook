@@ -33,11 +33,11 @@ make
 cp sickle /usr/local/bin/sickle
 
 # Install nxtrim
-cd /sources
-git clone https://github.com/sequencing/NxTrim
-cd NxTrim
-make
-cp nxtrim /usr/local/bin/nxtrim
+#cd /sources
+#git clone https://github.com/sequencing/NxTrim
+#cd NxTrim
+#make
+#cp nxtrim /usr/local/bin/nxtrim
 
 # Install jellyfish
 cd /sources
@@ -71,23 +71,23 @@ cd SPAdes-3.13.0
 PREFIX=/usr/local ./spades_compile.sh
 
 # Install bfc kmer error correction
-cd /sources
-git clone https://github.com/lh3/bfc
-cd bfc
-make
-cp bfc /usr/local/bin/bfc
+#cd /sources
+#git clone https://github.com/lh3/bfc
+#cd bfc
+#make
+#cp bfc /usr/local/bin/bfc
 
 # Install SSPACE
-cd /sources
-wget https://github.com/BenLangmead/bowtie/releases/download/v1.2.2_p1/bowtie-1.2.2-linux-x86_64.zip
-unzip bowtie-1.2.2-linux-x86_64.zip
-cd bowtie-1.2.2-linux-x86_64
-cp bowtie* /usr/local/bin/
-cd /sources
-git clone https://github.com/nsoranzo/sspace_basic
-cd sspace_basic
-cp SSPACE_Basic_v2.0.pl /usr/local/bin/SSPACE_Basic_v2.0.pl
-cp -r /sources/sspace_basic/bin /usr/local/bin/
+#cd /sources
+#wget https://github.com/BenLangmead/bowtie/releases/download/v1.2.2_p1/bowtie-1.2.2-linux-x86_64.zip
+#unzip bowtie-1.2.2-linux-x86_64.zip
+#cd bowtie-1.2.2-linux-x86_64
+#cp bowtie* /usr/local/bin/
+#cd /sources
+#git clone https://github.com/nsoranzo/sspace_basic
+#cd sspace_basic
+#cp SSPACE_Basic_v2.0.pl /usr/local/bin/SSPACE_Basic_v2.0.pl
+#cp -r /sources/sspace_basic/bin /usr/local/bin/
 
 # Install Plink
 cd /sources
