@@ -71,3 +71,4 @@ RUN R -e "install.packages('remotes')"
 RUN R -e "remotes::install_github('linxihui/NNLM')"
 RUN apt-get -qq install -y libssl-dev
 RUN R -e "remotes::install_github('yanwu2014/swne')"
+RUN R -e "install.packages('seurat')"
