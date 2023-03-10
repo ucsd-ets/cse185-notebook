@@ -1,4 +1,4 @@
-FROM ucsdets/datascience-notebook:2020.2-stable
+FROM ucsdets/datascience-notebook:2023.2-stable
 
 MAINTAINER Melissa Gymrek <mgymrek@ucsd.edu>
 USER root
@@ -61,3 +61,5 @@ RUN R -e "install.packages('readr', dependencies=TRUE, repos='http://cran.rstudi
 RUN R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "BiocManager::install('DESeq2')"
 RUN R -e "BiocManager::install('tximport')"
+
+USER $NB_USER
