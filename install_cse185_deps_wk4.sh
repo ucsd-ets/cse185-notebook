@@ -19,8 +19,3 @@ tar -xzvf v1.3.1.tar.gz
 cd RSEM-1.3.1/
 make && make install
 
-# goatools
-cd /sources
-pip install git+git://github.com/tanghaibao/goatools.git
-
-pip install simplegeneric
