@@ -70,6 +70,6 @@ RUN rm /sources/*.zip
 RUN rm -rf /opt/julia
 
 RUN apt-get update && apt-get -qq install -y man-db
-RUN yes | unminimize
+RUN set +o pipefail && yes | unminimize
 
 USER $NB_USER
