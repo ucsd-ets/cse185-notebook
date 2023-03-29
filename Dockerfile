@@ -69,6 +69,7 @@ RUN rm /sources/*.tar.gz
 RUN rm /sources/*.zip
 RUN rm -rf /opt/julia
 
+RUN apt-get update && apt-get -qq install -y man-db
 RUN yes | unminimize
 
 USER $NB_USER
