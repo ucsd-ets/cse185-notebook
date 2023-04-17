@@ -4,7 +4,7 @@ Dockerfile for UCSD course CSE185 (Advanced Bioinformatics Laboratory)
 To update:
 ```
 # Test that it builds
-docker builds .
+docker build .
 
 # Commit and push changes to github
 
