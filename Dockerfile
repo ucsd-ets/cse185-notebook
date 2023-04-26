@@ -72,4 +72,6 @@ RUN rm -rf /opt/julia
 RUN apt-get update && apt-get -qq install -y man-db
 RUN set +o pipefail && yes | unminimize
 
+COPY late.py /usr/local/etc/jupyter/late.py
+
 USER $NB_USER

@@ -4,7 +4,7 @@ Dockerfile for UCSD course CSE185 (Advanced Bioinformatics Laboratory)
 To update:
 ```
 # Test that it builds
-docker builds .
+docker build .
 
 # Commit and push changes to github
 
@@ -12,7 +12,7 @@ docker builds .
 git tag sp23; git push origin sp23
 
 # To replace
-git -d sp23; git push ---delete origin sp23
+git tag -d sp23; git push --delete origin sp23
 git tag sp23; git push origin sp23
 ```
 
