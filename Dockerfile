@@ -69,8 +69,8 @@ RUN rm /sources/*.tar.gz
 RUN rm /sources/*.zip
 RUN rm -rf /opt/julia
 
-#RUN apt-get update && apt-get -qq install -y man-db
-#RUN set +o pipefail && yes | unminimize
+RUN apt-get update && apt-get -qq install -y man-db
+RUN set +o pipefail && yes | unminimize
 
 COPY late.py /usr/local/etc/jupyter/late.py
 
