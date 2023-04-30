@@ -20,6 +20,7 @@ RUN apt-get update && apt-get -qq install -y \
     libtool \
     openssh-client \
     vim \
+    zip \
     zlib1g-dev \
     software-properties-common
 
@@ -53,8 +54,6 @@ ADD install_cse185_deps_wk4.sh /sources/
 RUN chmod +x /sources/install_cse185_deps_wk4.sh
 RUN /sources/install_cse185_deps_wk4.sh
 
-RUN apt-get update && apt-get -qq install -y \
-    zip
 ADD install_cse185_deps_wk5.sh /sources
 RUN chmod +x /sources/install_cse185_deps_wk5.sh
 RUN /sources/install_cse185_deps_wk5.sh
