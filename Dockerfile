@@ -73,5 +73,6 @@ RUN rm -rf /opt/julia
 #RUN set +o pipefail && yes | unminimize
 
 COPY late.py /usr/local/etc/jupyter/late.py
+RUN chmod a+w /usr/local/etc/jupyter/late.py
 
 USER $NB_USER
