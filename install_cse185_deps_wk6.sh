@@ -4,4 +4,4 @@ set -e
 
 ##### Week 6 ######
 
-pip install scanpy harmonypy louvain
+pip install scanpy harmonypy leidenalg
